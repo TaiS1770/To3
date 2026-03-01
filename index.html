@@ -425,6 +425,69 @@
     font-size: 35px;
     cursor: pointer;
 }
+.video-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.video-header h2 {
+    margin: 0;
+}
+
+.video-header p {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.video-description {
+    margin-top: 15px;
+    font-style: italic;
+    color: #444;
+}
+.contact-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.contact-card {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.member-table {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.member-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.member-table th {
+    background: #8b0000;
+    color: white;
+    padding: 8px;
+}
+
+.member-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
 </style>
 </head>
 
@@ -524,31 +587,38 @@
     <!-- VIDEO -->
 <div id="video" class="content-section">
 
-    <div class="video-wrapper">
-   <div class="video-wrapper">
-    <iframe 
-        width="100%" 
-        height="450"
-        src="https://www.youtube.com/embed/aNjSZOzdg24"
-        title="Video kỉ niệm"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-    <p>Video kỉ niệm</p>
-</div>
+    <div class="video-card">
+
+        <div class="video-header">
+            <h2>🎬 Video kỷ niệm 12A2</h2>
+            <p>Khoảnh khắc đáng nhớ của tập thể lớp</p>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe 
+                width="100%" 
+                height="450"
+                src="https://www.youtube.com/embed/aNjSZOzdg24"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="video-description">
+            Video ghi lại những kỷ niệm trong suốt 3 năm học.
+            Từ những ngày đầu bỡ ngỡ đến khi trưởng thành.
+        </div>
+
     </div>
-    <!-- Ô nhập trước -->
+
     <div class="comment-box">
         <input type="text"
                placeholder="Viết bình luận..."
                onkeypress="addVideoComment(event, this)">
     </div>
 
-    <!-- Danh sách comment nằm dưới -->
     <div id="video-comment-list"></div>
-
-</div>
+    </div>
     <!-- BÀI VIẾT -->
 <div id="baiviet" class="content-section">
 
@@ -645,34 +715,39 @@
 <!--Lien-he-->
 <div id="contact" class="content-section">
 
-    <div class="footer">
-        <div class="footer-left">
-            <h3>Thông tin liên hệ</h3>
-            Trường THPT Trường Chinh<br>
-            Email: nhomnayquadangcap@gmail<br>
-            Số điện thoại: 067362008<br>
-            Email phụ trách: konichiwa@gmail.com
-        </div>
+    <h2>📞 Liên hệ & Thông tin lớp</h2>
 
-        <div class="footer-right">
-            <h3>Bảng thành viên và nhiệm vụ</h3>
-            <table border="1" width="100%">
-                <tr>
-                    <th>STT</th>
-                    <th>Họ tên</th>
-                    <th>Nhiệm vụ</th>
-                </tr>
-                <tr><td>1</td><td>Cao Văn Nguyên</td><td>Sắp xếp bố cục</td></tr>
-                <tr><td>2</td><td>Đặng Chí Tài</td><td>Thiết kế web</td></tr>
-                <tr><td>3</td><td>Tạ Thị Thanh Tâm</td><td>Thiết kế web</td></tr>
-                <tr><td>4</td><td>Nguyễn Thị Nhã</td><td>Thiết kế khung</td></tr>
-                <tr><td>5</td><td>Mai Tiến Thuật</td><td>Tìm hình ảnh</td></tr>
-                <tr><td>6</td><td>Phằn Thị Yến Nhi</td><td>Tìm hình ảnh</td></tr>
-                <tr><td>7</td><td>Trương Tuấn Anh</td><td>Tìm hình ảnh</td></tr>
-                <tr><td>8</td><td>Dương Thành Đạt</td><td>Làm video</td></tr>
-                <tr><td>9</td><td>Phạm Tuấn Kiệt</td><td>Làm video</td></tr>
-            </table>
+    <div class="contact-container">
+
+        <div class="contact-card">
+            <h3>🏫 Thông tin trường</h3>
+            <p><strong>Trường:</strong> THPT Trường Chinh</p>
+            <p><strong>Email:</strong> nhomnayquadangcap@gmail.com</p>
+            <p><strong>Điện thoại:</strong> 067362008</p>
         </div>
+        
+
+    </div>
+
+    <div class="member-table">
+        <h3>📋 Danh sách thành viên & nhiệm vụ</h3>
+
+       <table>
+    <tr>
+        <th>STT</th>
+        <th>Họ tên</th>
+        <th>Nhiệm vụ</th>
+    </tr>
+    <tr><td>1</td><td>Cao Văn Nguyên</td><td>Sắp xếp bố cục</td></tr>
+    <tr><td>2</td><td>Đặng Chí Tài</td><td>Thiết kế web</td></tr>
+    <tr><td>3</td><td>Tạ Thị Thanh Tâm</td><td>Thiết kế web</td></tr>
+    <tr><td>4</td><td>Nguyễn Thị Nhã</td><td>Thiết kế khung</td></tr>
+    <tr><td>5</td><td>Mai Tiến Thuật</td><td>Tìm hình ảnh</td></tr>
+    <tr><td>6</td><td>Phằn Thị Yến Nhi</td><td>Tìm hình ảnh</td></tr>
+    <tr><td>7</td><td>Trương Tuấn Anh</td><td>Tìm hình ảnh</td></tr>
+    <tr><td>8</td><td>Dương Thành Đạt</td><td>Làm video</td></tr>
+    <tr><td>9</td><td>Phạm Tuấn Kiệt</td><td>Làm video</td></tr>
+</table>
     </div>
 
 </div>
@@ -767,6 +842,3 @@ modal.onclick = function() {
 </body>
 
 </html>
-
-
-
