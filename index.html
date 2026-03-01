@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Giới thiệu lớp 12A2</title>
+
+<style>
+    * {
+    box-sizing: border-box;
+}
+    body {
+        margin: 0; 
+        padding: 0;
+        height: 100%;
+        font-family: Arial, Helvetica, sans-serif; 
+    }
+    /* ===== KHUNG NGOÀI ===== */
+   .wrapper {
+    background-image: url(images/wood.jpg);
+     background-repeat: no-repeat;
+      background-size: cover; 
+       background-position: center;
+    
+       
+     
+}
+    /* ===== HEADER ===== */
+    .header {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 2px solid #333;
+         background-image: url("images/anhnen.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+;
+    }
+    .logo  {
+        width: 100x;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+         overflow: hidden;
+    }
+    .logo img {
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    display: block;
+}
+    .title {
+        flex: 1;
+        text-align: center;
+    }
+
+    .title p {
+        margin: 0;
+        font-size: 14px;
+        font-style: italic;
+        color: white;
+    }
+
+    .title h1 {
+        margin: 5px 0 0;
+        font-size: 36px;
+        font-family: "Times New Roman", serif;
+        color: white;
+    }
+    .login {
+    right: 10px;
+    top: -22px;   
+    font-size: 14px;
+    cursor: pointer;
+    text-align: right;  
+}
+
+
+
+.login:hover {
+    text-decoration: underline;
+}
+
+
+    /* ===== THANH THỜI GIAN + SEARCH ===== */
+    .top-bar {
+        height: 45;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #333;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .search input {
+        width: 180px;
+    }
+
+    /* ===== NỘI DUNG CHÍNH ===== */
+    .main {
+        display: flex;
+        border-bottom: 2px solid #333;
+        align-items: stretch; /* QUAN TRỌNG */
+         min-height: 100vh; 
+    }
+
+    /* ===== MENU TRÁI ===== */
+    .left {
+    width: 250px;
+    border-right: 2px solid #333;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    flex-direction: column;
+    }
+    .left .menu-title {
+        background: #8b0000;
+        color: white;
+        font-weight: bold;
+    }
+
+    .left ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-shrink: 0;
+    }
+    .left-bottom-image {
+    margin-top: auto; 
+     flex: 1;     
+     display: flex;
+    
+}
+.left-bottom-image img {
+    width: 100%;
+     height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+    .left li {
+        border-bottom: 1px solid #333;
+        padding: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    }
+    /* Thanh đỏ trượt */
+.left li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background: #8b0000;
+    transition: 0.3s;
+}
+/* Hover */
+.left li:hover {
+    background: #8b0000;
+    color: white;
+    padding-left: 18px;
+}
+
+.left li:hover::after {
+    width: 100%;
+}
+* {
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+    /* ===== CONTENT GIỮA ===== */
+    .center {
+        flex: 1;
+        overflow: hidden;
+        padding: 15px;
+    }
+
+    .hot-big {
+        background: #7a7a7a;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        margin-bottom: 20px;
+     }
+     .video-wrapper {
+    width: 80%;           
+    max-width: 900px;     
+    margin: 40px auto;    
+    text-align: center;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+     .content-section {
+    display: none;
+     }
+    #hinhanh {
+    display: block;
+}
+    .hot-small {
+        grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-items: center;   
+}
+    
+    .hot-box {
+     width: 280px;
+    text-align: center;
+    padding-bottom: 10px;
+    background: rgba(255,255,255,0.95);
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.4s ease;
+    position: relative;
+    cursor: pointer;
+     overflow: hidden;
+}
+.hot-box:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+.hot-box:hover img {
+    transform: scale(1.12);
+}
+.hot-box p {
+    transition: 0.3s;
+}
+
+.hot-box:hover p {
+    color: #fa1616;
+    font-weight: bold;
+}
+    
+    .hot-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+     transition: transform 0.6s ease;
+    }
+    .hot-box video {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+/* ===== BÀI VIẾT KIỂU FACEBOOK ===== */
+.post {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.post-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-info {
+    flex: 1;
+}
+
+.post-info h4 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.post-info span {
+    font-size: 12px;
+    color: gray;
+}
+
+.post-content {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.post-actions div:hover {
+    color: #1877f2;
+}
+
+    /* ===== BÌNH LUẬN ===== */
+    .comment {
+        border-top: 2px solid #333;
+        padding: 10px;
+    }
+
+    .comment input {
+        width: 200px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+        display: flex;
+        border-top: 2px solid #333;
+    }
+
+    .footer-left,
+    .footer-right{   
+    border-radius: 6px;
+        width: 50%;
+        padding: 10px;
+        border-right: 2px solid #333;
+    }
+
+    .footer-right {
+        border-right: none;
+        background: rgba(255,255,255,0.95);
+        text-align: center;
+        font-weight: bold;
+    }
+
+    /* ===== CHỖ CHƯA XÁC ĐỊNH ===== */
+    .placeholder {
+        font-style: italic;
+        color: #444;
+    }
+    .comment-box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+#main-comment-list {
+    margin-top: 15px;
+}
+
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.comment-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comment-content {
+    background: #f0f2f5;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.comment-content strong {
+    display: block;
+    font-size: 13px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo"><img src="images/Nhom3.png" alt=""></span></div>
+        <div class="title">
+            <h1>GIỚI THIỆU LỚP 12A2</h1>
+    </div>
+    </div>
+<div class ="login">
+         Đăng nhập/Đăng Kí
+         </div>
+    <!-- THANH THỜI GIAN + SEARCH -->
+    <div class="top-bar">
+        <div class="search">
+            <input type="text" placeholder="Tìm kiếm...">
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- MENU TRÁI -->
+<div class="left">
+    <div class="menu-title">Chủ đề</div>
+    <ul>
+        <li onclick="showSection('hinhanh')">Hình ảnh</li>
+        <li onclick="showSection('video')">Video</li>
+        <li onclick="showSection('baiviet')">Bài viết</li>
+        <li onclick="showSection('contact')">Contact</li>
+    </ul>
+
+    <!-- ẢNH Ở VÙNG TRẮNG -->
+    <div class="left-bottom-image">
+        <img src="images/wood.jpg" alt="">
+    </div>
+</div>
+        <!-- CONTENT -->
+      <div class="center">
+
+    <!-- HÌNH ẢNH -->
+    <div id="hinhanh" class="content-section">
+    <div class="hot-small">
+
+        <div class="hot-box">
+            <img src="images/anh1.jpg">
+            <p>Ảnh 1</p>
+        </div>
+
+        <div class="hot-box">
+            <img src="images/anh2.jpg">
+            <p>Ảnh 2</p>
+        </div>
+
+        <div class="hot-box">
+            <img src="images/anh3.jpg">
+            <p>Ảnh 3</p>
+        </div>
+
+        <div class="hot-box">
+            <img src="images/anh4.jpg">
+            <p>Ảnh 4</p>
+        </div>
+
+        <div class="hot-box">
+            <img src="images/anh5.jpg">
+            <p>Ảnh 5</p>
+        </div>
+
+        <div class="hot-box">
+            <img src="images/anh6.jpg">
+            <p>Ảnh 6</p>
+        </div>
+        <div class="hot-box">
+    <img src="images/anh7.jpg">
+    <p>Ảnh 7</p>
+</div>
+
+<div class="hot-box">
+    <img src="images/anh8.jpg">
+    <p>Ảnh 8</p>
+</div>
+</div>
+<div class="comment-box">
+    <input type="text" placeholder="Viết bình luận..." 
+           onkeypress="addMainComment(event, this)">
+</div>
+
+<div id="main-comment-list"></div>
+</div>
+
+    <!-- VIDEO -->
+<div id="video" class="content-section">
+
+    <div class="video-wrapper">
+   <div class="video-wrapper">
+    <iframe 
+        width="100%" 
+        height="450"
+        src="https://www.youtube.com/embed/aNjSZOzdg24"
+        title="Video kỉ niệm"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+    <p>Video kỉ niệm</p>
+</div>
+    <!-- Ô nhập trước -->
+    <div class="comment-box">
+        <input type="text"
+               placeholder="Viết bình luận..."
+               onkeypress="addVideoComment(event, this)">
+    </div>
+
+    <!-- Danh sách comment nằm dưới -->
+    <div id="video-comment-list"></div>
+
+</div>
+    <!-- BÀI VIẾT -->
+<div id="baiviet" class="content-section">
+
+    <!-- BÀI 1 -->
+    <div class="post">
+        <div class="post-header">
+            <div class="post-avatar">
+                <img src="images/avatar1.jpg">
+            </div>
+            <div class="post-info">
+                <h4>Đặng Chí Tài</h4>
+                <span>2 giờ trước</span>
+            </div>
+        </div>
+
+        <div class="post-content">
+            Tuổi 18 là cột mốc quan trọng của mỗi người học sinh.
+            Đó là những ngày tháng cuối cùng bên bạn bè,
+            thầy cô trước khi bước sang một hành trình mới...
+        </div>
+
+        <div class="post-actions">
+            <div>👍 Thích</div>
+            <div>💬 Bình luận</div>
+            <div>↪ Chia sẻ</div>
+        </div>
+    </div>
+
+    <!-- BÀI 2 -->
+    <div class="post">
+        <div class="post-header">
+            <div class="post-avatar">
+                <img src="images/avatar2.jpg">
+            </div>
+            <div class="post-info">
+                <h4>12A2 - Trường Chinh</h4>
+                <span>Hôm qua lúc 19:30</span>
+            </div>
+        </div>
+
+        <div class="post-content">
+            Ba năm học không quá dài nhưng đủ để chúng ta
+            có những kỷ niệm đáng nhớ.
+            Từ những buổi học đầu tiên đến những lần cùng nhau
+            tham gia hoạt động cuối cùng.
+        </div>
+
+        <div class="post-actions">
+            <div>👍 Thích</div>
+            <div>💬 Bình luận</div>
+            <div>↪ Chia sẻ</div>
+        </div>
+    </div> <!-- ĐÓNG BÀI 2 -->
+
+    <!-- BÀI 3 -->
+    <div class="post">
+        <div class="post-header">
+            <div class="post-avatar">
+                <img src="images/avatar4.jpg">
+            </div>
+            <div class="post-info">
+                <h4>Phùng Thanh Độ</h4>
+                <span>1 ngày trước</span>
+            </div>
+        </div>
+
+        <div class="post-content">Mình chưa bao giờ gặp lớp nào có ảnh
+                    kỉ yếu đẹp như lớp này! giá như hôm đó đi để có tấm
+                    ảnh kỉ niệm phát khô gà cho mỗi bạn.
+        </div>
+
+        <div class="post-actions">
+            <div>👍 Thích</div>
+            <div>💬 Bình luận</div>
+            <div>↪ Chia sẻ</div>
+        </div>
+    </div>
+
+    <!-- BÀI 4 -->
+    <div class="post">
+        <div class="post-header">
+            <div class="post-avatar">
+                <img src="images/avatar5.jpg">
+            </div>
+            <div class="post-info">
+                <h4>Lê Quốc HƯng</h4>
+                <span>3 ngày trước</span>
+            </div>
+        </div>
+
+        <div class="post-content">
+            Chuẩn bị cho kỳ thi quan trọng sắp tới.
+            Cả lớp cùng nhau cố gắng để đạt kết quả tốt nhất.
+        </div>
+
+        <div class="post-actions">
+            <div>👍 Thích</div>
+            <div>💬 Bình luận</div>
+            <div>↪ Chia sẻ</div>
+        </div>
+    </div>
+</div>
+<!--Lien-he-->
+<div id="contact" class="content-section">
+
+    <div class="footer">
+        <div class="footer-left">
+            <h3>Thông tin liên hệ</h3>
+            Trường THPT Trường Chinh<br>
+            Email: nhomnayquadangcap@gmail<br>
+            Số điện thoại: 067362008<br>
+            Email phụ trách: konichiwa@gmail.com
+        </div>
+
+        <div class="footer-right">
+            <h3>Bảng thành viên và nhiệm vụ</h3>
+            <table border="1" width="100%">
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th>Nhiệm vụ</th>
+                </tr>
+                <tr><td>1</td><td>Cao Văn Nguyên</td><td>Sắp xếp bố cục</td></tr>
+                <tr><td>2</td><td>Đặng Chí Tài</td><td>Thiết kế web</td></tr>
+                <tr><td>3</td><td>Tạ Thị Thanh Tâm</td><td>Thiết kế web</td></tr>
+                <tr><td>4</td><td>Nguyễn Thị Nhã</td><td>Thiết kế khung</td></tr>
+                <tr><td>5</td><td>Mai Tiến Thuật</td><td>Tìm hình ảnh</td></tr>
+                <tr><td>6</td><td>Phằn Thị Yến Nhi</td><td>Tìm hình ảnh</td></tr>
+                <tr><td>7</td><td>Trương Tuấn Anh</td><td>Tìm hình ảnh</td></tr>
+                <tr><td>8</td><td>Dương Thành Đạt</td><td>Làm video</td></tr>
+                <tr><td>9</td><td>Phạm Tuấn Kiệt</td><td>Làm video</td></tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</div>
+    <!-- FOOTER -->
+    </div>
+    <!-- POPUP XEM ẢNH -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+</div>
+<script>
+
+/* ===== HIỂN THỊ SECTION ===== */
+function showSection(id) {
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => section.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+
+/* ===== TẠO COMMENT ===== */
+function createComment(name, avatar, text) {
+    return `
+        <div class="comment-item">
+            <div class="comment-avatar">
+                <img src="${avatar}" alt="avatar">
+            </div>
+            <div class="comment-content">
+                <strong>${name}</strong><br>
+                ${text}
+            </div>
+        </div>
+    `;
+}
+
+/* ===== COMMENT ẢNH ===== */
+function addMainComment(event, input) {
+    if (event.key === "Enter" && input.value.trim() !== "") {
+        const list = document.getElementById("main-comment-list");
+        list.insertAdjacentHTML(
+            "beforeend",
+            createComment(
+                "Thành viên ẩn danh",
+                "images/avatar3.jpg",
+                input.value
+            )
+        );
+        input.value = "";
+    }
+}
+
+/* ===== COMMENT VIDEO ===== */
+function addVideoComment(event, input) {
+    if (event.key === "Enter" && input.value.trim() !== "") {
+        const list = document.getElementById("video-comment-list");
+        list.insertAdjacentHTML(
+            "beforeend",
+            createComment(
+                "Thành viên ẩn danh",
+                "images/avatar3.jpg",
+                input.value
+            )
+        );
+        input.value = "";
+    }
+}
+
+/* ===== XEM ẢNH POPUP ===== */
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll(".hot-box img").forEach(img => {
+    img.addEventListener("click", function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    });
+});
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+modal.onclick = function() {
+    modal.style.display = "none";
+}
+
+</script>
+</body>
+</html>
